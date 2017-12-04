@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Photos</h1>
+
+<div>
+  <% @photos.each do |photo| %>       
+    <%= link_to(image_tag(attachment_url(photo, :image, :fit, 100, 100, format: 'jpg')), attachment_url(photo, :image, :fit, 500, 500, format: 'jpg'), data: { lightbox: "example-set", title: photo.name }) %>     
+  <% end %>
+</div>    
+
+<br>
+
+<%= link_to 'New Photo', new_photo_path %>
